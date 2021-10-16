@@ -6,6 +6,7 @@ const router = Router()
 const upload = multer()
 
 import { createProductController } from "./useCases/CreateProduct";
+import { deleteOrderController } from "./useCases/DeleteOrder";
 import { deleteProductController } from "./useCases/DeleteProduct";
 import { getAllOrdersController } from "./useCases/GetAllOrders";
 import { getAllProductsController } from "./useCases/GetAllProducts";
@@ -18,5 +19,6 @@ router.delete('/products', (req, res) => deleteProductController.handle(req, res
 
 router.get('/orders', (req, res) => getAllOrdersController.handle(req, res))
 router.post('/orders', (req, res) => createOrderController.handle(req, res))
+router.delete('/orders', (req, res) => deleteOrderController.handle(req, res))
 
 export { router }
